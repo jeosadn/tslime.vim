@@ -123,8 +123,8 @@ function! s:Tmux_Vars()
   endif
 endfunction
 
-vnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR>
-nmap     <silent> <Plug>NormalModeSendToTmux vip <Plug>SendSelectionToTmux
+vnoremap <silent> <Plug>SendSelectionToTmux "ry :call Send_to_Tmux(@r)<CR> :call Send_to_Tmux("\n")<CR>
+nmap     <silent> <Plug>NormalModeSendToTmux va( <Plug>SendSelectionToTmux
 
 nnoremap          <Plug>SetTmuxVars :call <SID>Tmux_Vars()<CR>
 
